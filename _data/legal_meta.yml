@@ -1,0 +1,9 @@
+# version / last_updated is a single shared value across ALL published
+# locales (including the ja/en hub itself) — consistent with how
+# privacy.html already operates today as one file with one shared footer
+# for both languages. See docs/adr/0018 in celestial_bastion for rationale.
+version: 1
+last_updated: "2026-06-05"
+last_updated_display:
+  ja: "2026年6月5日"
+  en: "June 5, 2026"

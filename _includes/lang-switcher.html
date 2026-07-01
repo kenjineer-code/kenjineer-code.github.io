@@ -1,0 +1,1 @@
+<div class="lang-switcher">{% for entry in site.data.locales.published %}<a href="{{ entry.url }}">{% if entry.locale == "ja" %}日本語{% elsif entry.locale == "en" %}English{% else %}{{ entry.locale }}{% endif %}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</div>

@@ -1,0 +1,17 @@
+published:
+  - locale: ja
+    url: privacy.html#lang-ja
+  - locale: en
+    url: privacy.html#lang-en
+
+planned:
+  - locale: es
+    url: privacy.es.html
+  - locale: ko
+    url: privacy.ko.html
+  - locale: de
+    url: privacy.de.html
+  - locale: fr
+    url: privacy.fr.html
+  - locale: pt-BR
+    url: privacy.pt-BR.html
