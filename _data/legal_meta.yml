@@ -7,3 +7,17 @@ last_updated: "2026-06-05"
 last_updated_display:
   ja: "2026年6月5日"
   en: "June 5, 2026"
+  es: "5 de junio de 2026"
+# version_label / last_updated_label hold the full per-locale footer label
+# strings (including the document-name prefix already used in the ja/en
+# footer text, e.g. "プライバシーポリシー バージョン" / "Privacy Policy Version").
+# _includes/legal-footer.html is logic-less and looks these up by locale,
+# so adding a locale only ever requires new data here, never a template edit.
+version_label:
+  ja: "プライバシーポリシー バージョン"
+  en: "Privacy Policy Version"
+  es: "Política de Privacidad Versión"
+last_updated_label:
+  ja: "最終更新日："
+  en: "Last updated: "
+  es: "Última actualización: "

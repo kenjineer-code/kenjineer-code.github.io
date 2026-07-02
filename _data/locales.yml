@@ -1,12 +1,15 @@
 published:
   - locale: ja
     url: privacy.html#lang-ja
+    label: 日本語
   - locale: en
     url: privacy.html#lang-en
-
-planned:
+    label: English
   - locale: es
     url: privacy.es.html
+    label: Español
+
+planned:
   - locale: ko
     url: privacy.ko.html
   - locale: de
