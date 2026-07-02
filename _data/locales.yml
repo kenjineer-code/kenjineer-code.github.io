@@ -8,12 +8,13 @@ published:
   - locale: es
     url: privacy.es.html
     label: Español
+  - locale: de
+    url: privacy.de.html
+    label: Deutsch
 
 planned:
   - locale: ko
     url: privacy.ko.html
-  - locale: de
-    url: privacy.de.html
   - locale: fr
     url: privacy.fr.html
   - locale: pt-BR
