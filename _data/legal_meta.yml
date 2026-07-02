@@ -9,6 +9,7 @@ last_updated_display:
   en: "June 5, 2026"
   es: "5 de junio de 2026"
   de: "5. Juni 2026"
+  fr: "5 juin 2026"
 # version_label / last_updated_label hold the full per-locale footer label
 # strings (including the document-name prefix already used in the ja/en
 # footer text, e.g. "プライバシーポリシー バージョン" / "Privacy Policy Version").
@@ -19,8 +20,10 @@ version_label:
   en: "Privacy Policy Version"
   es: "Política de Privacidad Versión"
   de: "Datenschutzerklärung Version"
+  fr: "Politique de Confidentialité Version"
 last_updated_label:
   ja: "最終更新日："
   en: "Last updated: "
   es: "Última actualización: "
   de: "Letzte Aktualisierung: "
+  fr: "Dernière mise à jour : "

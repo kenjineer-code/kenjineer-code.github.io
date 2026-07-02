@@ -11,11 +11,12 @@ published:
   - locale: de
     url: privacy.de.html
     label: Deutsch
+  - locale: fr
+    url: privacy.fr.html
+    label: Français
 
 planned:
   - locale: ko
     url: privacy.ko.html
-  - locale: fr
-    url: privacy.fr.html
   - locale: pt-BR
     url: privacy.pt-BR.html
