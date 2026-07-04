@@ -14,9 +14,10 @@ published:
   - locale: fr
     url: privacy.fr.html
     label: Français
-
-planned:
   - locale: ko
     url: privacy.ko.html
+    label: 한국어
+
+planned:
   - locale: pt-BR
     url: privacy.pt-BR.html
