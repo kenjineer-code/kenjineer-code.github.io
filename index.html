@@ -1,376 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kenjineer Games Studioは、スマートフォン向けゲーム・アプリを企画・開発する個人事業です。">
-    <link rel="canonical" href="https://kenjineergames.com/">
-    <title>Kenjineer Games Studio | スマートフォン向けゲーム・アプリ開発</title>
-    <style>
-        :root {
-            color-scheme: light;
-            --ink: #17233a;
-            --muted: #5e6b80;
-            --blue: #1465c0;
-            --blue-deep: #0b3978;
-            --blue-soft: #eaf3ff;
-            --line: #dbe4ef;
-            --surface: #ffffff;
-            --background: #f5f8fc;
-            --shadow: 0 18px 48px rgba(28, 68, 121, 0.10);
-        }
-
-        * { box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            margin: 0;
-            background: var(--background);
-            color: var(--ink);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        a { color: inherit; }
-
-        .site-header {
-            background: rgba(255, 255, 255, 0.94);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .header-inner,
-        .container {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-        }
-
-        .header-inner {
-            min-height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-        }
-
-        .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--ink);
-            font-weight: 750;
-            letter-spacing: -0.02em;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .brand-mark {
-            display: grid;
-            place-items: center;
-            width: 30px;
-            height: 30px;
-            border-radius: 9px;
-            background: linear-gradient(135deg, #1976d2, #0a3f86);
-            color: #fff;
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-        }
-
-        .site-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            gap: 4px 18px;
-        }
-
-        .site-nav a {
-            color: #42516a;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .site-nav a:hover,
-        .site-nav a:focus-visible { color: var(--blue); }
-
-        .hero {
-            padding: 88px 0 72px;
-            background:
-                radial-gradient(circle at 82% 18%, rgba(91, 167, 255, 0.23), transparent 30rem),
-                linear-gradient(135deg, #f8fbff 0%, #edf5ff 100%);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .eyebrow {
-            display: inline-block;
-            margin: 0 0 18px;
-            color: var(--blue-deep);
-            font-size: 0.8rem;
-            font-weight: 750;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        h1, h2, h3, p { margin-top: 0; }
-
-        h1 {
-            max-width: 760px;
-            margin-bottom: 20px;
-            font-size: clamp(2.2rem, 6vw, 4.4rem);
-            letter-spacing: -0.055em;
-            line-height: 1.08;
-        }
-
-        .hero-copy {
-            max-width: 650px;
-            margin-bottom: 30px;
-            color: #3d4e68;
-            font-size: clamp(1.05rem, 2vw, 1.3rem);
-        }
-
-        .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 46px;
-            padding: 10px 19px;
-            border: 1px solid transparent;
-            border-radius: 8px;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .button-primary { background: var(--blue); color: #fff; }
-        .button-primary:hover, .button-primary:focus-visible { background: var(--blue-deep); }
-        .button-secondary { border-color: #b9cde5; background: #fff; color: var(--blue-deep); }
-        .button-secondary:hover, .button-secondary:focus-visible { background: var(--blue-soft); }
-
-        section { padding: 76px 0; }
-        section:nth-of-type(even) { background: var(--surface); }
-
-        .section-label {
-            margin-bottom: 10px;
-            color: var(--blue);
-            font-size: 0.8rem;
-            font-weight: 750;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        h2 {
-            margin-bottom: 16px;
-            font-size: clamp(1.7rem, 4vw, 2.4rem);
-            letter-spacing: -0.035em;
-            line-height: 1.2;
-        }
-
-        .section-intro {
-            max-width: 700px;
-            margin-bottom: 32px;
-            color: var(--muted);
-        }
-
-        .principles {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .principle,
-        .app-card,
-        .legal-card,
-        .contact-card {
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            background: var(--surface);
-            box-shadow: 0 8px 20px rgba(31, 67, 111, 0.04);
-        }
-
-        .principle { padding: 24px; }
-        .principle h3 { margin-bottom: 8px; font-size: 1.05rem; }
-        .principle p { margin-bottom: 0; color: var(--muted); font-size: 0.95rem; }
-
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
-
-        .app-card {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            padding: 26px;
-            min-height: 190px;
-        }
-
-        .app-icon {
-            width: 92px;
-            height: 92px;
-            flex: 0 0 auto;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(17, 54, 98, 0.2);
-        }
-
-        .app-card h3 { margin-bottom: 6px; font-size: 1.25rem; line-height: 1.35; }
-        .app-card p { margin-bottom: 0; color: var(--muted); font-size: 0.94rem; }
-        .app-status { margin-bottom: 7px; color: var(--blue-deep); font-size: 0.78rem; font-weight: 750; }
-
-        .legal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-
-        .legal-card {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 24px;
-            text-decoration: none;
-        }
-
-        .legal-card h3 { margin-bottom: 8px; font-size: 1.05rem; }
-        .legal-card p { margin-bottom: 18px; color: var(--muted); font-size: 0.92rem; }
-        .legal-card span { margin-top: auto; color: var(--blue); font-size: 0.9rem; font-weight: 700; }
-        .legal-card:hover, .legal-card:focus-visible { border-color: #93bce9; box-shadow: var(--shadow); }
-
-        .contact-card {
-            padding: 30px;
-            background: linear-gradient(135deg, #113e7c, #176cc5);
-            color: #fff;
-        }
-
-        .contact-card h2 { margin-bottom: 10px; }
-        .contact-card p { max-width: 680px; margin-bottom: 20px; color: #eaf4ff; }
-        .contact-email { color: #fff; font-size: clamp(1.1rem, 3vw, 1.35rem); font-weight: 750; }
-        .contact-email:hover, .contact-email:focus-visible { color: #d6ecff; }
-
-        footer {
-            padding: 26px 0;
-            background: #0e1e34;
-            color: #b8c5d8;
-            font-size: 0.88rem;
-        }
-
-        @media (max-width: 760px) {
-            .header-inner { min-height: auto; padding: 17px 0; align-items: flex-start; flex-direction: column; gap: 10px; }
-            .site-nav { justify-content: flex-start; gap: 5px 16px; }
-            .hero { padding: 64px 0 54px; }
-            section { padding: 54px 0; }
-            .principles, .legal-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 420px) {
-            .header-inner, .container { width: min(100% - 28px, 1120px); }
-            .app-card { align-items: flex-start; flex-direction: column; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kenjineer Games Studioは、スマートフォン向けゲーム・アプリを企画・開発する個人事業です。">
+  <link rel="canonical" href="https://kenjineergames.com/">
+  <meta name="theme-color" content="#08152d">
+  <title>Kenjineer Games Studio | Mobile Games and Apps</title>
+  <style>
+    :root { color-scheme: dark; --night:#08152d; --soft:#0d1e3c; --panel:#10264a; --line:rgba(193,216,255,.18); --text:#f3f7ff; --muted:#b7c6dd; --accent:#5ba9ef; --bright:#94c9fa; --radius:16px; --content:min(1160px,calc(100% - 48px)); }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--night); color:var(--text); font-family:"Aptos","Yu Gothic UI","Hiragino Kaku Gothic ProN","Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:16px; line-height:1.7; }
+    a { color:inherit; } a:focus-visible { outline:3px solid var(--bright); outline-offset:4px; } .wrap { width:var(--content); margin:0 auto; }
+    .site-header { position:absolute; z-index:2; width:100%; border-bottom:1px solid rgba(230,240,255,.16); background:linear-gradient(180deg,rgba(4,13,30,.62),transparent); }
+    .nav-wrap { width:var(--content); min-height:72px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; font-size:.95rem; font-weight:760; letter-spacing:.01em; text-decoration:none; white-space:nowrap; }
+    .brand-mark { display:grid; width:32px; height:32px; place-items:center; border:1px solid rgba(179,219,255,.7); border-radius:50%; color:var(--bright); font-size:.66rem; font-weight:800; letter-spacing:.04em; }
+    nav { display:flex; align-items:center; gap:24px; } nav a { color:#e5efff; font-size:.86rem; font-weight:650; text-decoration:none; } nav a:hover { color:var(--bright); }
+    .hero { position:relative; min-height:min(780px,100dvh); display:grid; align-items:end; overflow:hidden; background:#0a1c3b; }
+    .hero::before { position:absolute; inset:0; content:""; background:linear-gradient(90deg,rgba(5,15,33,.95) 0%,rgba(5,15,33,.72) 36%,rgba(5,15,33,.15) 72%,rgba(5,15,33,.3) 100%),linear-gradient(0deg,rgba(5,15,33,.82),transparent 48%); z-index:1; }
+    .hero-art { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+    .hero-copy { position:relative; z-index:1; padding:184px 0 88px; } .kicker { margin:0 0 18px; color:var(--bright); font-size:.78rem; font-weight:750; letter-spacing:.12em; text-transform:uppercase; } h1,h2,h3,p { margin-top:0; }
+    h1 { max-width:690px; margin-bottom:20px; font-size:clamp(2.7rem,6.2vw,5.5rem); letter-spacing:-.06em; line-height:.98; } .hero-copy>p:not(.kicker) { max-width:530px; margin-bottom:30px; color:#d2dff1; font-size:clamp(1rem,2vw,1.16rem); }
+    .button { display:inline-flex; min-height:48px; align-items:center; justify-content:center; padding:10px 20px; border:1px solid var(--bright); border-radius:999px; background:var(--bright); color:#07162f; font-size:.91rem; font-weight:800; text-decoration:none; transition:transform 180ms ease,background 180ms ease; } .button:hover { transform:translateY(-2px); background:#c0e0ff; } .button:active { transform:translateY(0); }
+    section { padding:112px 0; } .section-title { margin-bottom:24px; font-size:clamp(2rem,3.4vw,3.3rem); letter-spacing:-.045em; line-height:1.12; } .section-copy { max-width:630px; margin-bottom:0; color:var(--muted); }
+    .about-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); gap:clamp(44px,8vw,120px); align-items:end; } .about-grid .section-title { max-width:560px; } .practice-list { margin:0; border-top:1px solid var(--line); } .practice-list div { padding:21px 0; border-bottom:1px solid var(--line); } .practice-list dt { margin-bottom:3px; color:var(--bright); font-size:.82rem; font-weight:750; letter-spacing:.06em; } .practice-list dd { margin:0; color:var(--muted); font-size:.94rem; }
+    .apps { background:var(--soft); } .apps-head { display:flex; align-items:end; justify-content:space-between; gap:32px; margin-bottom:42px; } .apps-head .section-copy { max-width:390px; } .app-feature { display:grid; grid-template-columns:154px minmax(0,1fr) auto; gap:36px; align-items:center; padding:32px; border:1px solid var(--line); border-radius:var(--radius); background:rgba(5,17,39,.28); } .app-icon { width:154px; height:154px; border-radius:27px; box-shadow:0 18px 42px rgba(0,0,0,.3); } .app-meta { margin-bottom:9px; color:var(--bright); font-size:.78rem; font-weight:750; letter-spacing:.08em; } .app-feature h3 { margin-bottom:9px; font-size:clamp(1.55rem,3vw,2.15rem); letter-spacing:-.035em; } .app-feature p { max-width:550px; margin-bottom:0; color:var(--muted); } .plain-link { color:var(--bright); font-size:.9rem; font-weight:750; text-decoration:none; white-space:nowrap; } .plain-link:hover { color:#fff; }
+    .legal-grid { display:grid; grid-template-columns:1.25fr .85fr .85fr; gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; } .legal-intro,.legal-link { min-height:230px; padding:31px; } .legal-intro { background:var(--panel); } .legal-intro h2 { margin-bottom:13px; font-size:clamp(1.7rem,3vw,2.45rem); letter-spacing:-.04em; line-height:1.13; } .legal-intro p { margin-bottom:0; color:var(--muted); font-size:.94rem; } .legal-link { display:flex; flex-direction:column; justify-content:space-between; border-left:1px solid var(--line); background:rgba(255,255,255,.025); text-decoration:none; transition:background 180ms ease; } .legal-link:hover { background:rgba(91,169,239,.1); } .legal-link h3 { margin-bottom:8px; font-size:1.04rem; } .legal-link p { margin-bottom:0; color:var(--muted); font-size:.89rem; } .link-action { color:var(--bright); font-size:.86rem; font-weight:750; }
+    .contact-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(270px,.72fr); gap:clamp(46px,8vw,130px); align-items:start; } .contact-grid .section-copy { margin-bottom:28px; } .email { color:var(--bright); font-size:clamp(1.12rem,2.6vw,1.5rem); font-weight:750; text-decoration:none; word-break:break-word; } .email:hover { color:#fff; } .business-info { padding:27px 0 0 28px; border-left:2px solid var(--accent); } .business-info h3 { margin-bottom:16px; font-size:1rem; } .business-info address { color:var(--muted); font-size:.95rem; font-style:normal; line-height:1.85; }
+    footer { padding:28px 0; border-top:1px solid var(--line); color:#91a6c5; font-size:.82rem; } .footer-wrap { display:flex; justify-content:space-between; gap:20px; }
+    @media (max-width:780px) { :root { --content:min(100% - 32px,1160px); } .nav-wrap { min-height:auto; padding:16px 0; align-items:flex-start; flex-direction:column; gap:11px; } nav { gap:16px; } .hero { min-height:700px; } .hero-art { object-position:62% center; } .hero::before { background:linear-gradient(90deg,rgba(5,15,33,.91),rgba(5,15,33,.4)),linear-gradient(0deg,rgba(5,15,33,.92),transparent 65%); } .hero-copy { padding:174px 0 55px; } section { padding:76px 0; } .about-grid,.contact-grid { grid-template-columns:1fr; gap:42px; } .apps-head { align-items:start; flex-direction:column; gap:10px; } .app-feature { grid-template-columns:108px 1fr; gap:23px; padding:23px; } .app-icon { width:108px; height:108px; border-radius:20px; } .app-feature .plain-link { grid-column:1 / -1; } .legal-grid { grid-template-columns:1fr; } .legal-intro,.legal-link { min-height:auto; } .legal-link { gap:30px; border-top:1px solid var(--line); border-left:0; } }
+    @media (max-width:460px) { nav { gap:13px; } nav a { font-size:.8rem; } .app-feature { grid-template-columns:1fr; } .footer-wrap { flex-direction:column; gap:4px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition-duration:.01ms !important; } }
+  </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <a class="brand" href="/" aria-label="Kenjineer Games Studio ホーム">
-                <span class="brand-mark" aria-hidden="true">KGS</span>
-                <span>Kenjineer Games Studio</span>
-            </a>
-            <nav class="site-nav" aria-label="メインナビゲーション">
-                <a href="#about">About</a>
-                <a href="#apps">Apps</a>
-                <a href="#legal">Privacy</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="container">
-                <p class="eyebrow">Independent mobile game studio</p>
-                <h1 id="hero-title">Kenjineer Games Studio</h1>
-                <p class="hero-copy">スマートフォン向けゲーム・アプリを企画・開発する個人事業です。遊びやすさと、長く安心して楽しめる体験を大切にしています。</p>
-                <div class="button-row">
-                    <a class="button button-primary" href="#apps">アプリを見る</a>
-                    <a class="button button-secondary" href="#contact">お問い合わせ</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" aria-labelledby="about-title">
-            <div class="container">
-                <p class="section-label">About</p>
-                <h2 id="about-title">ゲームとアプリを、誠実に設計する。</h2>
-                <p class="section-intro">Kenjineer Games Studioは、スマートフォンで楽しめるゲーム・アプリの企画、開発、運営を行っています。利用者の皆さまが安心してサービスを利用できるよう、サポートとプライバシーへの配慮を大切にしています。</p>
-                <div class="principles">
-                    <article class="principle">
-                        <h3>企画・開発</h3>
-                        <p>スマートフォンに適した、分かりやすく遊びごたえのある体験をつくります。</p>
-                    </article>
-                    <article class="principle">
-                        <h3>継続的な改善</h3>
-                        <p>利用者の声を参考に、品質と遊びやすさの向上を続けます。</p>
-                    </article>
-                    <article class="principle">
-                        <h3>安心への配慮</h3>
-                        <p>必要な情報を分かりやすく公開し、問い合わせに対応します。</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="apps" aria-labelledby="apps-title">
-            <div class="container">
-                <p class="section-label">Apps</p>
-                <h2 id="apps-title">アプリ</h2>
-                <p class="section-intro">公開中・開発中のスマートフォン向けアプリです。今後のタイトルもこちらに追加していきます。</p>
-                <div class="app-grid">
-                    <article class="app-card">
-                        <img class="app-icon" src="/assets/nova-and-the-sky-palace-icon.png" width="92" height="92" alt="ノヴァと空の宮殿のアプリアイコン">
-                        <div>
-                            <p class="app-status">SMARTPHONE GAME</p>
-                            <h3>ノヴァと空の宮殿</h3>
-                            <p>放置と編成を組み合わせたディフェンスゲーム。空の宮殿を目指す冒険をお楽しみいただけます。</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="legal" aria-labelledby="legal-title">
-            <div class="container">
-                <p class="section-label">Legal</p>
-                <h2 id="legal-title">法務情報</h2>
-                <p class="section-intro">アプリのご利用に関する方針・手続きは、以下のページをご確認ください。</p>
-                <div class="legal-grid">
-                    <a class="legal-card" href="/privacy">
-                        <h3>プライバシーポリシー</h3>
-                        <p>利用者情報の取り扱いと、第三者サービスへの情報送信についてご案内します。</p>
-                        <span>確認する →</span>
-                    </a>
-                    <a class="legal-card" href="/delete-request.html">
-                        <h3>データ削除リクエスト</h3>
-                        <p>アプリのデータ削除方法と、削除請求の窓口をご案内します。</p>
-                        <span>確認する →</span>
-                    </a>
-                    <a class="legal-card" href="/tokusho.html">
-                        <h3>特定商取引法に基づく表記</h3>
-                        <p>該当する取引に関する事業者情報と販売条件を掲載しています。</p>
-                        <span>確認する →</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" aria-labelledby="contact-title">
-            <div class="container">
-                <div class="contact-card">
-                    <p class="section-label" style="color: #bfe0ff;">Contact</p>
-                    <h2 id="contact-title">お問い合わせ</h2>
-                    <p>Kenjineer Games Studioへのお問い合わせは、以下のメールアドレスまでお願いします。内容を確認のうえ、必要に応じて対応します。</p>
-                    <a class="contact-email" href="mailto:kenjineergames@gmail.com">kenjineergames@gmail.com</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">© Kenjineer Games Studio</div>
-    </footer>
+  <header class="site-header"><div class="nav-wrap"><a class="brand" href="/" aria-label="Kenjineer Games Studio ホーム"><span class="brand-mark" aria-hidden="true">KGS</span><span>Kenjineer Games Studio</span></a><nav aria-label="メインナビゲーション"><a href="#about">About</a><a href="#apps">Apps</a><a href="#legal">Privacy</a><a href="#contact">Contact</a></nav></div></header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title"><img class="hero-art" src="/assets/kenjineer-games-studio-hero.png" width="1536" height="1024" alt="月夜の空に浮かぶ壮大な宮殿と、宮殿を見つめる冒険者"><div class="wrap hero-copy"><p class="kicker">Independent Mobile Game Studio</p><h1 id="hero-title">手のひらに、忘れがたい冒険を。</h1><p>スマートフォン向けゲーム・アプリを、企画から開発・運営まで一貫して手がけています。</p><a class="button" href="#apps">アプリを見る</a></div></section>
+    <section id="about" aria-labelledby="about-title"><div class="wrap about-grid"><div><p class="kicker">About</p><h2 class="section-title" id="about-title">遊ぶ時間が、少し豊かになるゲームを。</h2><p class="section-copy">Kenjineer Games Studioは、スマートフォンで気軽に始められ、長く楽しめるゲーム体験をつくる個人事業です。</p></div><dl class="practice-list"><div><dt>CONCEPT</dt><dd>分かりやすい遊び心地と、考える楽しさを両立します。</dd></div><div><dt>DEVELOPMENT</dt><dd>企画・開発・改善を一貫して行い、品質を高めます。</dd></div><div><dt>SUPPORT</dt><dd>プライバシーとお問い合わせ対応を大切にします。</dd></div></dl></div></section>
+    <section class="apps" id="apps" aria-labelledby="apps-title"><div class="wrap"><div class="apps-head"><div><p class="kicker">Apps</p><h2 class="section-title" id="apps-title">アプリ</h2></div><p class="section-copy">公開中・開発中のタイトルを掲載しています。新しい作品もこのページでご案内します。</p></div><article class="app-feature"><img class="app-icon" src="/assets/nova-and-the-sky-palace-icon.png" width="154" height="154" alt="ノヴァと空の宮殿のアプリアイコン"><div><p class="app-meta">SMARTPHONE GAME</p><h3>ノヴァと空の宮殿</h3><p>放置と編成を組み合わせたディフェンスゲーム。空の宮殿を目指す冒険をお楽しみいただけます。</p></div><a class="plain-link" href="/privacy">プライバシー情報</a></article></div></section>
+    <section id="legal" aria-labelledby="legal-title"><div class="wrap legal-grid"><div class="legal-intro"><p class="kicker">Legal</p><h2 id="legal-title">安心して遊んでいただくために。</h2><p>利用者情報の取り扱いと、データ削除の手続きを分かりやすくご案内します。</p></div><a class="legal-link" href="/privacy"><div><h3>プライバシーポリシー</h3><p>情報の取り扱いと第三者サービスへの送信について。</p></div><span class="link-action">確認する</span></a><a class="legal-link" href="/delete-request.html"><div><h3>データ削除リクエスト</h3><p>データ削除の方法とご請求窓口について。</p></div><span class="link-action">確認する</span></a></div></section>
+    <section id="contact" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="kicker">Contact</p><h2 class="section-title" id="contact-title">お問い合わせ</h2><p class="section-copy">サービス、サポート、プライバシーに関するお問い合わせは、メールでお受けしています。</p><a class="email" href="mailto:kenjineergames@gmail.com">kenjineergames@gmail.com</a></div><div class="business-info"><h3>事業者情報</h3><address>Kenjineer Games Studio<br>〒160-0023<br>東京都新宿区西新宿三丁目3番13号<br>西新宿水間ビル6階</address></div></div></section>
+  </main>
+  <footer><div class="wrap footer-wrap"><span>© Kenjineer Games Studio</span><a href="/tokusho.html">特定商取引法に基づく表記</a></div></footer>
 </body>
 </html>
