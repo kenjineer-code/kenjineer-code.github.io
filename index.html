@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kenjineer Games Studioは、スマートフォン向けゲーム・アプリを企画・開発する個人事業です。">
+    <link rel="canonical" href="https://kenjineergames.com/">
+    <title>Kenjineer Games Studio | スマートフォン向けゲーム・アプリ開発</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #17233a;
+            --muted: #5e6b80;
+            --blue: #1465c0;
+            --blue-deep: #0b3978;
+            --blue-soft: #eaf3ff;
+            --line: #dbe4ef;
+            --surface: #ffffff;
+            --background: #f5f8fc;
+            --shadow: 0 18px 48px rgba(28, 68, 121, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--ink);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        a { color: inherit; }
+
+        .site-header {
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .header-inner,
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .header-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--ink);
+            font-weight: 750;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, #1976d2, #0a3f86);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .site-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 4px 18px;
+        }
+
+        .site-nav a {
+            color: #42516a;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .site-nav a:hover,
+        .site-nav a:focus-visible { color: var(--blue); }
+
+        .hero {
+            padding: 88px 0 72px;
+            background:
+                radial-gradient(circle at 82% 18%, rgba(91, 167, 255, 0.23), transparent 30rem),
+                linear-gradient(135deg, #f8fbff 0%, #edf5ff 100%);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin: 0 0 18px;
+            color: var(--blue-deep);
+            font-size: 0.8rem;
+            font-weight: 750;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h1, h2, h3, p { margin-top: 0; }
+
+        h1 {
+            max-width: 760px;
+            margin-bottom: 20px;
+            font-size: clamp(2.2rem, 6vw, 4.4rem);
+            letter-spacing: -0.055em;
+            line-height: 1.08;
+        }
+
+        .hero-copy {
+            max-width: 650px;
+            margin-bottom: 30px;
+            color: #3d4e68;
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+        }
+
+        .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 10px 19px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .button-primary { background: var(--blue); color: #fff; }
+        .button-primary:hover, .button-primary:focus-visible { background: var(--blue-deep); }
+        .button-secondary { border-color: #b9cde5; background: #fff; color: var(--blue-deep); }
+        .button-secondary:hover, .button-secondary:focus-visible { background: var(--blue-soft); }
+
+        section { padding: 76px 0; }
+        section:nth-of-type(even) { background: var(--surface); }
+
+        .section-label {
+            margin-bottom: 10px;
+            color: var(--blue);
+            font-size: 0.8rem;
+            font-weight: 750;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin-bottom: 16px;
+            font-size: clamp(1.7rem, 4vw, 2.4rem);
+            letter-spacing: -0.035em;
+            line-height: 1.2;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin-bottom: 32px;
+            color: var(--muted);
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .principle,
+        .app-card,
+        .legal-card,
+        .contact-card {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--surface);
+            box-shadow: 0 8px 20px rgba(31, 67, 111, 0.04);
+        }
+
+        .principle { padding: 24px; }
+        .principle h3 { margin-bottom: 8px; font-size: 1.05rem; }
+        .principle p { margin-bottom: 0; color: var(--muted); font-size: 0.95rem; }
+
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+
+        .app-card {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            padding: 26px;
+            min-height: 190px;
+        }
+
+        .app-icon {
+            width: 92px;
+            height: 92px;
+            flex: 0 0 auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(17, 54, 98, 0.2);
+        }
+
+        .app-card h3 { margin-bottom: 6px; font-size: 1.25rem; line-height: 1.35; }
+        .app-card p { margin-bottom: 0; color: var(--muted); font-size: 0.94rem; }
+        .app-status { margin-bottom: 7px; color: var(--blue-deep); font-size: 0.78rem; font-weight: 750; }
+
+        .legal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+        .legal-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 24px;
+            text-decoration: none;
+        }
+
+        .legal-card h3 { margin-bottom: 8px; font-size: 1.05rem; }
+        .legal-card p { margin-bottom: 18px; color: var(--muted); font-size: 0.92rem; }
+        .legal-card span { margin-top: auto; color: var(--blue); font-size: 0.9rem; font-weight: 700; }
+        .legal-card:hover, .legal-card:focus-visible { border-color: #93bce9; box-shadow: var(--shadow); }
+
+        .contact-card {
+            padding: 30px;
+            background: linear-gradient(135deg, #113e7c, #176cc5);
+            color: #fff;
+        }
+
+        .contact-card h2 { margin-bottom: 10px; }
+        .contact-card p { max-width: 680px; margin-bottom: 20px; color: #eaf4ff; }
+        .contact-email { color: #fff; font-size: clamp(1.1rem, 3vw, 1.35rem); font-weight: 750; }
+        .contact-email:hover, .contact-email:focus-visible { color: #d6ecff; }
+
+        footer {
+            padding: 26px 0;
+            background: #0e1e34;
+            color: #b8c5d8;
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 760px) {
+            .header-inner { min-height: auto; padding: 17px 0; align-items: flex-start; flex-direction: column; gap: 10px; }
+            .site-nav { justify-content: flex-start; gap: 5px 16px; }
+            .hero { padding: 64px 0 54px; }
+            section { padding: 54px 0; }
+            .principles, .legal-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 420px) {
+            .header-inner, .container { width: min(100% - 28px, 1120px); }
+            .app-card { align-items: flex-start; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="/" aria-label="Kenjineer Games Studio ホーム">
+                <span class="brand-mark" aria-hidden="true">KGS</span>
+                <span>Kenjineer Games Studio</span>
+            </a>
+            <nav class="site-nav" aria-label="メインナビゲーション">
+                <a href="#about">About</a>
+                <a href="#apps">Apps</a>
+                <a href="#legal">Privacy</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <p class="eyebrow">Independent mobile game studio</p>
+                <h1 id="hero-title">Kenjineer Games Studio</h1>
+                <p class="hero-copy">スマートフォン向けゲーム・アプリを企画・開発する個人事業です。遊びやすさと、長く安心して楽しめる体験を大切にしています。</p>
+                <div class="button-row">
+                    <a class="button button-primary" href="#apps">アプリを見る</a>
+                    <a class="button button-secondary" href="#contact">お問い合わせ</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" aria-labelledby="about-title">
+            <div class="container">
+                <p class="section-label">About</p>
+                <h2 id="about-title">ゲームとアプリを、誠実に設計する。</h2>
+                <p class="section-intro">Kenjineer Games Studioは、スマートフォンで楽しめるゲーム・アプリの企画、開発、運営を行っています。利用者の皆さまが安心してサービスを利用できるよう、サポートとプライバシーへの配慮を大切にしています。</p>
+                <div class="principles">
+                    <article class="principle">
+                        <h3>企画・開発</h3>
+                        <p>スマートフォンに適した、分かりやすく遊びごたえのある体験をつくります。</p>
+                    </article>
+                    <article class="principle">
+                        <h3>継続的な改善</h3>
+                        <p>利用者の声を参考に、品質と遊びやすさの向上を続けます。</p>
+                    </article>
+                    <article class="principle">
+                        <h3>安心への配慮</h3>
+                        <p>必要な情報を分かりやすく公開し、問い合わせに対応します。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="apps" aria-labelledby="apps-title">
+            <div class="container">
+                <p class="section-label">Apps</p>
+                <h2 id="apps-title">アプリ</h2>
+                <p class="section-intro">公開中・開発中のスマートフォン向けアプリです。今後のタイトルもこちらに追加していきます。</p>
+                <div class="app-grid">
+                    <article class="app-card">
+                        <img class="app-icon" src="/assets/nova-and-the-sky-palace-icon.png" width="92" height="92" alt="ノヴァと空の宮殿のアプリアイコン">
+                        <div>
+                            <p class="app-status">SMARTPHONE GAME</p>
+                            <h3>ノヴァと空の宮殿</h3>
+                            <p>放置と編成を組み合わせたディフェンスゲーム。空の宮殿を目指す冒険をお楽しみいただけます。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="legal" aria-labelledby="legal-title">
+            <div class="container">
+                <p class="section-label">Legal</p>
+                <h2 id="legal-title">法務情報</h2>
+                <p class="section-intro">アプリのご利用に関する方針・手続きは、以下のページをご確認ください。</p>
+                <div class="legal-grid">
+                    <a class="legal-card" href="/privacy">
+                        <h3>プライバシーポリシー</h3>
+                        <p>利用者情報の取り扱いと、第三者サービスへの情報送信についてご案内します。</p>
+                        <span>確認する →</span>
+                    </a>
+                    <a class="legal-card" href="/delete-request.html">
+                        <h3>データ削除リクエスト</h3>
+                        <p>アプリのデータ削除方法と、削除請求の窓口をご案内します。</p>
+                        <span>確認する →</span>
+                    </a>
+                    <a class="legal-card" href="/tokusho.html">
+                        <h3>特定商取引法に基づく表記</h3>
+                        <p>該当する取引に関する事業者情報と販売条件を掲載しています。</p>
+                        <span>確認する →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-card">
+                    <p class="section-label" style="color: #bfe0ff;">Contact</p>
+                    <h2 id="contact-title">お問い合わせ</h2>
+                    <p>Kenjineer Games Studioへのお問い合わせは、以下のメールアドレスまでお願いします。内容を確認のうえ、必要に応じて対応します。</p>
+                    <a class="contact-email" href="mailto:kenjineergames@gmail.com">kenjineergames@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">© Kenjineer Games Studio</div>
+    </footer>
+</body>
+</html>
