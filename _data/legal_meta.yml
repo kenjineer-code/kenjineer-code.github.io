@@ -2,16 +2,16 @@
 # locales (including the ja/en hub itself) — consistent with how
 # privacy.html already operates today as one file with one shared footer
 # for both languages. See docs/adr/0018 in celestial_bastion for rationale.
-version: 2
-last_updated: "2026-07-02"
+version: 3
+last_updated: "2026-09-05"
 last_updated_display:
-  ja: "2026年7月2日"
-  en: "July 2, 2026"
-  es: "2 de julio de 2026"
-  de: "2. Juli 2026"
-  fr: "2 juillet 2026"
-  ko: "2026년 7월 2일"
-  pt-BR: "2 de julho de 2026"
+  ja: "2026年9月5日"
+  en: "September 5, 2026"
+  es: "5 de septiembre de 2026"
+  de: "5. September 2026"
+  fr: "5 septembre 2026"
+  ko: "2026년 9월 5일"
+  pt-BR: "5 de setembro de 2026"
 # version_label / last_updated_label hold the full per-locale footer label
 # strings (including the document-name prefix already used in the ja/en
 # footer text, e.g. "プライバシーポリシー バージョン" / "Privacy Policy Version").
