@@ -43,7 +43,7 @@
     .site-nav { position:absolute; inset:0 0 auto; z-index:3; border-bottom:1px solid rgba(232,242,255,.22); background:linear-gradient(180deg,rgba(4,13,31,.68),transparent); color:#f5f8ff; }
     .nav-inner { width:var(--content); min-height:72px; margin-inline:auto; display:flex; align-items:center; justify-content:space-between; gap:28px; }
     .brand { display:inline-flex; align-items:center; gap:12px; font-size:.92rem; font-weight:800; text-decoration:none; white-space:nowrap; }
-    .brand-mark { display:grid; width:34px; height:34px; place-items:center; border:1px solid rgba(255,255,255,.7); border-radius:50%; color:var(--accent-bright); font-size:.65rem; letter-spacing:.04em; }
+    .brand-mark { display:block; width:40px; height:40px; flex:none; object-fit:contain; }
     .nav-links { display:flex; align-items:center; gap:24px; }
     .nav-links a { font-size:.84rem; font-weight:750; text-decoration:none; white-space:nowrap; }
     .nav-links a:hover { color:var(--accent-bright); }
@@ -225,7 +225,7 @@
 <body>
   <header class="site-nav">
     <div class="nav-inner">
-      <a class="brand" href="/" aria-label="Kenjineer Games Studio ホーム"><span class="brand-mark" aria-hidden="true">KGS</span><span>Kenjineer Games Studio</span></a>
+      <a class="brand" href="/" aria-label="Kenjineer Games Studio ホーム"><img class="brand-mark" src="/assets/brand/kgs-mark-sky.png" width="40" height="40" alt=""><span>Kenjineer Games Studio</span></a>
       <nav class="nav-links" aria-label="ゲーム紹介ナビゲーション"><a href="#gameplay">遊び方</a><a href="#party">仲間</a><a href="#world">ステージ</a><a href="/">スタジオへ戻る</a></nav>
     </div>
   </header>

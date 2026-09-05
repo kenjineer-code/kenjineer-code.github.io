@@ -14,7 +14,7 @@
     .site-header { position:absolute; z-index:2; width:100%; border-bottom:1px solid rgba(230,240,255,.16); background:linear-gradient(180deg,rgba(4,13,30,.62),transparent); }
     .nav-wrap { width:var(--content); min-height:72px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:28px; }
     .brand { display:inline-flex; align-items:center; gap:12px; font-size:.95rem; font-weight:760; letter-spacing:.01em; text-decoration:none; white-space:nowrap; }
-    .brand-mark { display:grid; width:32px; height:32px; place-items:center; border:1px solid rgba(179,219,255,.7); border-radius:50%; color:var(--bright); font-size:.66rem; font-weight:800; letter-spacing:.04em; }
+    .brand-mark { display:block; width:40px; height:40px; flex:none; object-fit:contain; }
     nav { display:flex; align-items:center; gap:24px; } nav a { color:#e5efff; font-size:.86rem; font-weight:650; text-decoration:none; } nav a:hover { color:var(--bright); }
     .hero { position:relative; min-height:min(780px,100dvh); display:grid; align-items:end; overflow:hidden; background:#0a1c3b; }
     .hero::before { position:absolute; inset:0; content:""; background:linear-gradient(90deg,rgba(5,15,33,.95) 0%,rgba(5,15,33,.72) 36%,rgba(5,15,33,.15) 72%,rgba(5,15,33,.3) 100%),linear-gradient(0deg,rgba(5,15,33,.82),transparent 48%); z-index:1; }
@@ -33,7 +33,7 @@
   </style>
 </head>
 <body>
-  <header class="site-header"><div class="nav-wrap"><a class="brand" href="/" aria-label="Kenjineer Games Studio ホーム"><span class="brand-mark" aria-hidden="true">KGS</span><span>Kenjineer Games Studio</span></a><nav aria-label="メインナビゲーション"><a href="#about">About</a><a href="#apps">Apps</a><a href="#contact">Contact</a></nav></div></header>
+  <header class="site-header"><div class="nav-wrap"><a class="brand" href="/" aria-label="Kenjineer Games Studio ホーム"><img class="brand-mark" src="/assets/brand/kgs-mark-sky.png" width="40" height="40" alt=""><span>Kenjineer Games Studio</span></a><nav aria-label="メインナビゲーション"><a href="#about">About</a><a href="#apps">Apps</a><a href="#contact">Contact</a></nav></div></header>
   <main>
     <section class="hero" aria-labelledby="hero-title"><img class="hero-art" src="/assets/kenjineer-games-studio-hero.png" width="1536" height="1024" alt="月夜の空に浮かぶ宮殿を見つめる冒険者"><div class="wrap hero-copy"><p class="kicker">Game Studio</p><h1 id="hero-title">ついつい、もう一度遊びたくなる。</h1><p>遊ぶたびに発見がある。そんな楽しさを届けます。</p><a class="button" href="#apps">ゲームを見る</a></div></section>
     <section id="about" aria-labelledby="about-title"><div class="wrap about-grid"><div><p class="kicker">About</p><h2 class="section-title" id="about-title">おなじみの遊びに、新しい発想を。</h2><p class="section-copy">Kenjineer Games Studioは、企画から開発、アップデート、サポートまでを手がけるゲームスタジオです。</p></div><dl class="practice-list"><div><dt>CONCEPT</dt><dd>ルールはすぐ分かり、遊ぶほど工夫の余地が見つかる。そんな手触りを目指します。</dd></div></dl></div></section>
