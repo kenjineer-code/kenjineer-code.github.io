@@ -26,7 +26,7 @@ Typeface: retain the site's sans-serif stack; use a firm 760 weight for the name
 
 ## Delivery and review
 
-Keep the high-resolution generated master and a transparent web asset in assets/brand. Verify on navy and white backgrounds and at 32px and 40px, plus desktop and narrow mobile headers. Set explicit image dimensions to reserve layout space. Do not restore the disabled link to the Nova introduction.
+Keep the high-resolution generated master and a transparent web asset in assets/brand. Verify on navy and white backgrounds and at 32px and 40px, plus desktop and narrow mobile headers. Set explicit image dimensions to reserve layout space. The Nova introduction is a static release page, linked from the homepage after its October 2026 refresh. Do not add scroll reveals, looping effects, or scripted image loading to that page.
 
 Assets: `assets/brand/kgs-mark-master.png` (dark ink master) and `assets/brand/kgs-mark-sky.png` (sky-blue header version), both 1254px square transparent PNGs. Palette values are target colors for generated artwork. Review sheet: `assets/brand/preview.html`.
 
