@@ -21,7 +21,8 @@ These files intentionally do not use `_layouts/legal.html`, the predecessor's lo
 - App `docs/spec/03_coin_economy.md`: local coins/upgrades, optional rewarded ads and interstitials.
 - App `lib/core/ads/child_directed_ads.dart`: child-directed treatment and G maximum for everyone.
 - App `android/app/src/main/AndroidManifest.xml`: advertising-ID/AdServices permissions removed; no explicit backup exclusion; test AdMob application ID remains.
-- App `docs/reports/2026-10-04-android-release-readiness.md`: legal/consent/age-signals and production settings unfinished.
+- App `docs/reports/2026-10-04-android-release-readiness.md`: receipt/discard and legal links implemented; consent, Play-distributed receipt checks and production settings unfinished.
+- App `CruxevoApplication` / `AgeSignalsReceiver`: process-owned once guard; shared-only retrieval; native payload discarded without reading fields or forwarding to Dart.
 - Site `index.html`: public business name, address, support email.
 
 ## Remaining app-release and legal-operational gates
@@ -31,11 +32,13 @@ These files intentionally do not use `_layouts/legal.html`, the predecessor's lo
 - [ ] Verify the actual pinned native Mobile Ads SDK, production ad sources and mediation, child-directed identifier behavior, data recipients, retention and processing purposes. Google's latest-version SDK summary is not proof for every build.
 - [ ] Verify startup ordering and release traffic, including native initialization before Dart safeguards. No device tests or builds were run for these documents.
 - [ ] Decide Android backup/restore/deletion behavior and align the release manifest and privacy wording. Do not say all data always stays on one device or all backup copies disappear on uninstall.
-- [ ] Implement Play Age Signals before release as authorized: receive and discard, no persistence/logging/advertising/UMP forwarding. Then replace the current-implementation sentence in all eight languages with the verified receipt/discard behavior. Do not claim blanket state-law compliance.
+- [x] Implement Play Age Signals receipt/discard and synchronize all eight privacy languages as version 2, 2026-10-07. No persistence/logging/advertising/UMP forwarding; no age payload crosses into Dart. This is implementation disclosure, not blanket state-law compliance.
+- [ ] Verify receipt and Google's sharing UI on a Play-distributed build, startup/resume on a device, and applicable state-law obligations. Local unit tests/builds do not prove Play reception or satisfy Families age-screening requirements.
 - [ ] Finalize processing legal bases, child/guardian notices, international-transfer disclosures and regional rights based on actual release operations. Do not copy Nova's personalized advertising, birth-date split, billing, or cloud-save wording.
 - [ ] Verify and operationalize support handling, retention and rights-request procedures. Publishing this email rights-request channel may change the optional Console deletion-request answer; review that answer against the channel actually provided.
 - [x] Add translations for zh-Hant, es, de, fr, pt-BR, ko; keep Portuguese support even though Brazil is excluded from distribution. Web documents cover all eight languages; app localization is still a separate task.
-- [ ] Add app legal links and any required disclosure/consent flow separately. These web files do not implement consent or a child-consent flow.
+- [x] Add app legal links (App #262): Japanese anchors open in an external browser. These links and web files do not implement consent or a child-consent flow.
+- [ ] Resolve and implement any required disclosure/consent flow separately.
 - [ ] Before app release, update the version/date when behaviors change and align Console disclosures. Do not substitute publication of these current-behavior pages for the unresolved checks above.
 - [ ] Verify deployed URLs return the intended publicly accessible HTML before registering them in Console.
 
