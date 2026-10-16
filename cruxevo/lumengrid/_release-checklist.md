@@ -15,6 +15,7 @@ Created 2026-10-16. Internal file: the leading underscore excludes it from Jekyl
 
 - App repository `kenjineer-code/lumen_grid`, `assets/legal/*.json` (owner-approved Japanese in issue #12; translations in PR #127). Terms v1 2026-10-04, privacy v3 2026-10-12, the same versions as the Sudoku app.
 - The pages differ from `cruxevo/nanpure/` only in the app name, the rules-ownership sentence (Akari / Light Up), the stored-data sentence (placed bulbs and crosses), the landing-page description, and the Italian pages and links.
+- Owner-approved titles (2026-10-16, App #128): Japanese Cruxevo: 光のロジック; Korean Cruxevo: 빛의 논리; Traditional Chinese Cruxevo: 光之邏輯; all other languages Cruxevo: Lumen Grid. Title-only updates preserve the document versions and substantive terms.
 - Every app document line was checked to appear in the matching page text (2026-10-16).
 
 ## Remaining
