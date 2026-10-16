@@ -14,6 +14,7 @@
     fr: `${kind}.fr.html`,
     'pt-BR': `${kind}.pt-BR.html`,
     ko: `${kind}.ko.html`,
+    it: `${kind}.it.html`,
   };
   const locale = requested.length === 1 && Object.hasOwn(routes, requested[0]) ? requested[0] : 'en';
   window.location.replace(routes[locale]);
