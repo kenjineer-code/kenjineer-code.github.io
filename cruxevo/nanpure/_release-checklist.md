@@ -42,6 +42,7 @@ These files intentionally do not use `_layouts/legal.html`, the predecessor's lo
 - [ ] Verify App #306's first-run and settings offline full-text consent flow on the authorized release artifact. App acknowledgments are not statutory parental consent.
 - [ ] Before app release, update the version/date when behaviors change and align Console disclosures. Do not substitute publication of these current-behavior pages for the unresolved checks above.
 - [ ] Verify deployed URLs return the intended publicly accessible HTML before registering them in Console.
+- [x] 2026-10-16: add Italian (`privacy.it.html`, `terms.it.html`, `?lang=it`), generated from the app's `assets/legal/it.json` (same versions); every app document line appears in the page text.
 
 ## Primary references checked on 2026-10-04
 
