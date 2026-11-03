@@ -32,4 +32,4 @@ Google Playバッジ：`assets/google-play-badge-ja.png`。Google公式配布元
 
 cruxevo-lumen-grid.html はCruxevoシリーズ第二弾の紹介ページ。ホームのゲーム紹介からリンクし、両ページにGoogle Playへの導線を設置。基本ルール、サポートモード、段階ヒント、仮置き、難易度と製品情報を掲載する。
 
-画像はLumen Gridの日本語ストア素材とアプリアイコンを assets/cruxevo/lumen-grid/ に保存。法務情報は既存の /cruxevo/lumengrid/ へリンクする。
+画像はオーナー提供の日本語のゲーム画面4点、タイトル画像、アプリアイコンを assets/cruxevo/lumen-grid/ に保存。法務情報は既存の /cruxevo/lumengrid/ へリンクする。
