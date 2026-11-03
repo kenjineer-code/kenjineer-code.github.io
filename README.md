@@ -27,3 +27,9 @@ Google Playバッジ：`assets/google-play-badge-ja.png`。Google公式配布元
 `cruxevo-nanpure.html` は、2026年10月24日に正式リリースしたCruxevoシリーズ第一弾の紹介ページ。ホームのゲーム紹介からリンクし、両ページにGoogle Playへの導線を設置。シリーズ名の由来、サポートモード、36種類の解法解説、プレイ画面、製品情報を掲載する。既存の `/cruxevo/nanpure/` は法務情報の入口として維持する。
 
 画像はオーナー提供の日本語画面4点と、アプリの既存日本語タイトル・アイコンをWebP化して `assets/cruxevo/nanpure/` に保存。元の縦横比を保ち、画面画像から拡大表示できる。画像内の文字を含め、紹介には「ナンプレ」「ナンバープレース」を使用する。法務ページは変更対象外。
+
+## Cruxevo: 光のロジック - 美術館 紹介ページ
+
+cruxevo-lumen-grid.html はCruxevoシリーズ第二弾の紹介ページ。ホームのゲーム紹介からリンクし、両ページにGoogle Playへの導線を設置。基本ルール、サポートモード、段階ヒント、仮置き、難易度と製品情報を掲載する。
+
+画像はLumen Gridの日本語ストア素材とアプリアイコンを assets/cruxevo/lumen-grid/ に保存。法務情報は既存の /cruxevo/lumengrid/ へリンクする。
