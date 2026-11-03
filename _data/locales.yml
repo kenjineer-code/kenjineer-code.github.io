@@ -20,5 +20,8 @@ published:
   - locale: pt-BR
     url: privacy.pt-BR.html
     label: Português (Brasil)
+  - locale: zh-Hant
+    url: privacy.zh-Hant.html
+    label: 繁體中文
 
 planned: []
