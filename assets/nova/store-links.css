@@ -1,0 +1,17 @@
+.nova-store-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-block: 10px;
+}
+
+.nova-store-links img {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+.nova-store-links .google-play-badge {
+  height: 52px;
+}
