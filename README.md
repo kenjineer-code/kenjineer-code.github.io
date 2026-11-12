@@ -35,3 +35,9 @@ App Storeバッジ：`assets/app-store-badge-ja.svg`。Apple公式配布元：`h
 cruxevo-lumen-grid.html はCruxevoシリーズ第二弾の紹介ページ。ホームのゲーム紹介からリンクし、両ページにGoogle Playへの導線を設置。基本ルール、サポートモード、段階ヒント、仮置き、難易度と製品情報を掲載する。
 
 画像はオーナー提供の日本語のゲーム画面4点、タイトル画像、アプリアイコンを assets/cruxevo/lumen-grid/ に保存。法務情報は既存の /cruxevo/lumengrid/ へリンクする。
+
+## Cruxevo: 橋かけパズル 紹介ページ
+
+`cruxevo-hashi.html` はCruxevoシリーズ第三弾の紹介ページ。ホームのゲーム紹介からリンクし、両ページにGoogle Playへの導線を設置する。基本ルール、サポートモード、段階ヒント、仮置き、難易度と製品情報を掲載する。
+
+オーナー提供の日本語ゲーム画面4点と、アプリの日本語タイトル画像・アイコンを `assets/cruxevo/hashi/` に保存する。プライバシーポリシーと利用規約は既存の `/cruxevo/bridgegrid/` 配下へリンクする。
